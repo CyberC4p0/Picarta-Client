@@ -82,4 +82,4 @@ Prediction 2:
 This project is licensed under the MIT License.
 
 ## Acknowledgements
-Picarta for providing the API
+[PicartaAI](https://github.com/PicartaAI) for providing the API
