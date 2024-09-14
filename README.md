@@ -53,7 +53,7 @@ python main.py
 API Token: your_api_token
 Enter the path to the image file: /path/to/image.jpg
 ```
-Example Output
+### Example Output
 The results will be displayed in a readable format, including AI confidence, country, latitude, longitude, city, province, and top predictions.
 ```
 Result:
