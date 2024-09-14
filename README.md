@@ -1,6 +1,6 @@
 # Unofficial Picarta Client
 
-This is a command-line tool for interacting with the Picarta API to localize images. The tool allows you to provide an API token and an image file path to get localization results. The API token can be saved for future use, and you can update it at any time.
+This is a command-line tool for interacting with the Picarta API to localize images. The tool allows you to provide an API token and an image file path/url to get localization results. The API token can be saved for future use, and you can update it at any time.
 
 For quota & pricing inquiries, please visit: [Picarta Pricing](https://picarta.ai/pricing)
 
@@ -29,10 +29,14 @@ For quota & pricing inquiries, please visit: [Picarta Pricing](https://picarta.a
 
 ### Command-Line Arguments
 
-You can provide the API token and image file path as command-line arguments:
+You can provide the API token and image file path/url as command-line arguments:
 
 ```sh
 python script_name.py --api_token your_api_token --img_path /path/to/image.jpg
+```
+OR
+```sh
+python script_name.py --api_token your_api_token --img_path https://i.postimg.cc/5NTGHCjn/IMG-0336.jpg
 ```
 ### Saving API Token
 The first time you run the script, you will be prompted to enter your API token. The token will be saved in a file named `api_token.txt` in your home directory. You won’t need to enter the token again unless you choose to update it.
@@ -43,7 +47,7 @@ To update the stored API token, use the `--update_token` flag:
 python script_name.py --update_token
 ```
 ### Running Without Arguments
-If you run the script without command-line arguments, you will be prompted to enter the API token and image file path:
+If you run the script without command-line arguments, you will be prompted to enter the API token and image file path/url:
 ```
 python script_name.py
 API Token: your_api_token
