@@ -2,6 +2,8 @@
 
 This is a command-line tool for interacting with the Picarta API to localize images. The tool allows you to provide an API token and an image file path to get localization results. The API token can be saved for future use, and you can update it at any time.
 
+For quota & pricing inquiries, please visit: [Picarta Pricing](https://picarta.ai/pricing)
+
 ## Features
 
 - Localize images using the Picarta API
@@ -75,7 +77,6 @@ Prediction 2:
 
 ...
 ```
-For more information on Picarta pricing, visit: [Picarta Pricing](https://picarta.ai/pricing)
 
 ## License
 This project is licensed under the MIT License.
