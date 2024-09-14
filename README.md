@@ -32,11 +32,11 @@ For quota & pricing inquiries, please visit: [Picarta Pricing](https://picarta.a
 You can provide the API token and image file path/url as command-line arguments:
 
 ```sh
-python script_name.py --api_token your_api_token --img_path /path/to/image.jpg
+python main.py --api_token your_api_token --img_path /path/to/image.jpg
 ```
 OR
 ```sh
-python script_name.py --api_token your_api_token --img_path https://i.postimg.cc/5NTGHCjn/IMG-0336.jpg
+python main.py --api_token your_api_token --img_path https://i.postimg.cc/5NTGHCjn/IMG-0336.jpg
 ```
 ### Saving API Token
 The first time you run the script, you will be prompted to enter your API token. The token will be saved in a file named `api_token.txt` in your home directory. You won’t need to enter the token again unless you choose to update it.
@@ -44,12 +44,12 @@ The first time you run the script, you will be prompted to enter your API token.
 ### Updating API Token
 To update the stored API token, use the `--update_token` flag:
 ```
-python script_name.py --update_token
+python main.py --update_token
 ```
 ### Running Without Arguments
 If you run the script without command-line arguments, you will be prompted to enter the API token and image file path/url:
 ```
-python script_name.py
+python main.py
 API Token: your_api_token
 Enter the path to the image file: /path/to/image.jpg
 ```
