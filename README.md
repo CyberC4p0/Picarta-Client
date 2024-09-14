@@ -8,7 +8,6 @@ For quota & pricing inquiries, please visit: [Picarta Pricing](https://picarta.a
 
 - Localize images using the Picarta API
 - Save and reuse API token
-- Update API token when needed
 - Display results in a readable format
 - Provide command-line arguments for flexibility
 
@@ -36,50 +35,64 @@ python main.py --api_token your_api_token --img_path /path/to/image.jpg
 ```
 OR
 ```sh
-python main.py --api_token your_api_token --img_path https://i.postimg.cc/5NTGHCjn/IMG-0336.jpg
+python main.py --image-url https://example.com/your/image.jpg
 ```
-### Saving API Token
-The first time you run the script, you will be prompted to enter your API token. The token will be saved in a file named `api_token.txt` in your home directory. You won’t need to enter the token again unless you choose to update it.
 
-### Updating API Token
-To update the stored API token, use the `--update_token` flag:
-```
-python main.py --update_token
-```
-### Running Without Arguments
-If you run the script without command-line arguments, you will be prompted to enter the API token and image file path/url:
-```
-python main.py
-API Token: your_api_token
-Enter the path to the image file: /path/to/image.jpg
-```
+### Argument Parser Setup
+The script uses an argument parser to handle various command-line arguments. Below are the available arguments and their descriptions:
+
+* `--api_token`: API Token for Picarta.
+* `--img_path`: Path to the image file.
+* `--update_token`: Update the stored API Token.
+* `--top_k`: Number of top predictions to return (default is 3).
+* `--center_latitude`: Center latitude for location search.
+* `--center_longitude`: Center longitude for location search.
+* `--radius`: Radius for location search in kilometers.
+
 ### Example Output
 The results will be displayed in a readable format, including AI confidence, country, latitude, longitude, city, province, and top predictions.
 ```
-Result:
-AI Confidence: 93.60%
-AI Country: Turkey
-AI Latitude: 41.03879
-AI Longitude: 29.000744
-City: Sisli
-Province: Istanbul
+Absolute path to image: C:\path\to\image\file.jpg
+File size: 35957 bytes
+API Token submitted
 
-Top Predictions:
+Result(s):
+
 Prediction 1:
-  City: Sisli
-  Country: Turkey
-  Province: Istanbul
-  Confidence: 93.60%
-  GPS: [41.03879, 29.000744]
+  City: Stafford
+  Country: United States
+  Province: Oregon
+  Confidence: 93.61%
+  GPS: [45.375286, -122.70602]
 
 Prediction 2:
-  City: Sisli
-  Country: Turkey
-  Province: Istanbul
-  Confidence: 92.56%
-  GPS: [41.038864, 29.00085]
+  City: View Park-Windsor Hills
+  Country: United States
+  Province: California
+  Confidence: 93.31%
+  GPS: [33.99668, -118.32776]
 
-...
+Prediction 3:
+  City: Sueca
+  Country: Spain
+  Province: Valencia
+  Confidence: 93.04%
+  GPS: [39.216743, -0.301651]
+
+
+For more information on Picarta pricing, visit: https://picarta.ai/pricing
+```
+
+### Printing EXIF Data
+If the image contains EXIF data, you can print the latitude, longitude, and country information. The script will check for the presence of EXIF data and print it if available.
+```py
+# Print EXIF data if available
+if 'exif_lat' in result:
+    print(f"EXIF Latitude: {result['exif_lat']}")
+if 'exif_lon' in result:
+    print(f"EXIF Longitude: {result['exif_lon']}")
+if 'exif_country' in result:
+    print(f"EXIF Country: {result['exif_country']}")
 ```
 
 ## License
