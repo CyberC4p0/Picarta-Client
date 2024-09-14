@@ -7,7 +7,6 @@ For quota & pricing inquiries, please visit: [Picarta Pricing](https://picarta.a
 ## Features
 
 - Localize images using the Picarta API
-- Save and reuse API token
 - Display results in a readable format
 - Provide command-line arguments for flexibility
 
@@ -33,16 +32,12 @@ You can provide the API token and image file path/url as command-line arguments:
 ```sh
 python main.py --api_token your_api_token --img_path /path/to/image.jpg
 ```
-OR
-```sh
-python main.py --image-url https://example.com/your/image.jpg
-```
 
 ### Argument Parser Setup
 The script uses an argument parser to handle various command-line arguments. Below are the available arguments and their descriptions:
 
 * `--api_token`: API Token for Picarta.
-* `--img_path`: Path to the image file.
+* `--img_path`: OS Path or URL to the image file.
 * `--update_token`: Update the stored API Token.
 * `--top_k`: Number of top predictions to return (default is 3).
 * `--center_latitude`: Center latitude for location search.
